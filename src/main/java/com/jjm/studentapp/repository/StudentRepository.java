@@ -1,4 +1,7 @@
 package com.jjm.studentapp.repository;
 
-public class StudentRepository {
+import com.jjm.studentapp.entity.Student;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface StudentRepository extends MongoRepository<Student,Integer> {
 }
