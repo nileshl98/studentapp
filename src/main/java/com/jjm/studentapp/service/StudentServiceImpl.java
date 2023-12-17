@@ -27,4 +27,23 @@ public class StudentServiceImpl implements StudentService{
     public Optional<Student> getStudentById(int id) {
         return studentRepository.findById(id);
     }
+
+    @Override
+    public void deleteById(int id) {
+         studentRepository.deleteById(id);
+    }
+
+    @Override
+    public Student updateStudent(int id, Student student) {
+        Student student1=studentRepository.findById(id).get();
+        student1.setLastName(student.getFirstName());
+        student1.setFirstName(student.getLastName());
+        return studentRepository.save(student1);
+    }
+
+   /* @Override
+    public Student findStudentByName(String firstName) {
+        return studentRepository.findStudentByName(firstName);
+    }*/
+
 }

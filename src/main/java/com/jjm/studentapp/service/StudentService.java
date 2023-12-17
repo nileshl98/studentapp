@@ -12,4 +12,10 @@ public interface StudentService {
     List<Student> showAllStudent();
 
     Optional<Student> getStudentById(int id);
+
+    void deleteById(int id);
+
+    Student updateStudent(int id, Student student);
+
+    //Student findStudentByName(String firstName);
 }

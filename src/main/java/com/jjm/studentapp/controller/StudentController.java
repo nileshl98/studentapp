@@ -29,4 +29,18 @@ public class StudentController {
         return studentservice.getStudentById(id);
     }
 
+    /*@GetMapping("findByName/{firstName}")
+    public Student findStudentByName(@PathVariable("firstName") String firstName){
+        return studentservice.findStudentByName(firstName);
+    }*/
+@DeleteMapping("deleteById/{id}")
+    public String deleteById(@PathVariable("id") int id){
+    studentservice.deleteById(id);
+    return "record delete for ID:"+id;
+}
+
+@PutMapping ("/updateById/{id}")
+    public Student updateStudent(@PathVariable("id") int id ,@RequestBody Student student){
+    return studentservice.updateStudent(id,student);
+}
 }
